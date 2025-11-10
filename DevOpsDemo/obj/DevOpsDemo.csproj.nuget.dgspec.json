@@ -52,7 +52,7 @@
           "dependencies": {
             "Microsoft.NET.Test.Sdk": {
               "target": "Package",
-              "version": "[18.0.0, )"
+              "version": "[17.8.0, )"
             },
             "Moq": {
               "target": "Package",
@@ -60,7 +60,7 @@
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
-              "version": "[6.6.2, )"
+              "version": "[9.0.6, )"
             },
             "xunit": {
               "target": "Package",

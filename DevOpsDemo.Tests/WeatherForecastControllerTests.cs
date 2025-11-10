@@ -1,8 +1,8 @@
-﻿using DevOpsDemo.Controllers;
+using DevOpsDemo.Controllers;
+using Microsoft.Extensions.Logging;
 using Moq;
-using Xunit;
 
-namespace DevOpsDemo
+namespace DevOpsDemo.Tests
 {
     public class WeatherForecastControllerTests
     {
