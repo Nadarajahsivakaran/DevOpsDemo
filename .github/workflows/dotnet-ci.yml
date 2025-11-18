@@ -11,20 +11,24 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      # 1️⃣ Checkout the repository
       - name: Checkout code
         uses: actions/checkout@v4
 
+      # 2️⃣ Setup .NET SDK
       - name: Setup .NET
         uses: actions/setup-dotnet@v4
         with:
-          dotnet-version: '8.0.x'  # use your version
+          dotnet-version: '8.0.x'
 
+      # 3️⃣ Restore dependencies for all projects
       - name: Restore dependencies
         run: dotnet restore
 
-      - name: Build project
-        run: dotnet build --no-restore --configuration Release
+      # 4️⃣ Build all projects (ignore warnings about top-level statements)
+      - name: Build projects
+        run: dotnet build --configuration Release /warnaserror:false
 
+      # 5️⃣ Run tests (automatically builds if needed)
       - name: Run tests
-        run: dotnet test DevOpsDemo/DevOpsDemo.Tests.csproj --no-build --verbosity normal
-
+        run: dotnet test DevOpsDemo.Tests/DevOpsDemo.Tests.csproj --configuration Release --verbosity normal
